@@ -163,3 +163,4 @@ artifacts/*
 research/catboost_info/*
 research/data/*
 research/saved_models/*
+catboost_info/*

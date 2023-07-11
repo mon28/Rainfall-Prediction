@@ -2,23 +2,29 @@ artifacts_root: artifacts
 
 data_ingestion:
   root_dir: artifacts/data_ingestion
-  source_URL: https://github.com/mon28/Datasets/raw/main/rainfall-australia-data
-  local_data_file: artifacts/data_ingestion/data.zip
+  source_URL: https://github.com/mon28/Datasets/raw/main/rainfall-australia-data.zip
+  local_data_file: artifacts/data_ingestion/rainfall-australia-data.zip
   unzip_dir: artifacts/data_ingestion/
   
 data_validation:
   root_dir: artifacts/data_validation
-  dataset_csv_file: artifacts/data_ingestion/weatherAUS.csv
-  cleaned_data_filename: preprocessed_rainfall.csv
+  REQUIRED_FILES: ["weatherAUS.csv"]
+  STATUS_FILE: artifacts/data_validation/status.txt
 
 data_transformation:
   root_dir: artifacts/data_transformation
-  data_path: artifacts/data_validation
-  data_file: preprocessed_rainfall.csv
-  transformed_filename: transformed_data.csv
+  data_filepath: artifacts/data_ingestion/rainfall_australia_dataset/weatherAUS.csv
+  train_data_filename: train.pkl
+  eval_data_filename: eval.pkl
 
 model_training:
+  root_dir: artifacts/model_training
+  model_name: cat_model.pkl
+  data_filepath: artifacts/data_transformation/train.pkl
+
+model_evaluation:
+  root_dir: artifacts/model_evaluation
+  data_filepath: artifacts/data_transformation/eval.pkl
   model_path: artifacts/model_training
   model_name: cat_model.pkl
-  data_path: artifacts/data_transformation
-  data_file: transformed_data.csv
+  metric_file_name: artifacts/model_evaluation/metrics.csv
