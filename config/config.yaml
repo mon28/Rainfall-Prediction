@@ -28,3 +28,6 @@ model_evaluation:
   model_path: artifacts/model_training
   model_name: cat_model.pkl
   metric_file_name: artifacts/model_evaluation/metrics.csv
+
+model_inference:
+  model_filepath: artifacts/model_training/cat_model.pkl

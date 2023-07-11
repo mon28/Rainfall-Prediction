@@ -36,3 +36,7 @@ class ModelEvaluationConfig:
     model_path: Path
     model_name: Path
     metric_file_name: Path
+
+@dataclass(frozen=True)
+class ModelInferenceConfig:
+    model_filepath: Path

@@ -4,7 +4,8 @@ from rainfall_prediction.entity import (DataIngestionConfig,
                                         DataValidationConfig,
                                         DataTransformationConfig,
                                         ModelTrainerConfig,
-                                        ModelEvaluationConfig)
+                                        ModelEvaluationConfig,
+                                        ModelInferenceConfig)
 
 
 class ConfigurationManager(object):
@@ -89,3 +90,12 @@ class ConfigurationManager(object):
             metric_file_name=config.metric_file_name
         )
         return model_evaluation_config
+    
+
+    def get_model_inference_config(self) -> ModelInferenceConfig:
+        config = self.config.model_inference
+
+        model_inference_config = ModelInferenceConfig(
+            model_filepath=config.model_filepath
+        )
+        return model_inference_config
