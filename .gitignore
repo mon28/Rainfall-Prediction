@@ -160,3 +160,6 @@ cython_debug/
 #.idea/
 
 artifacts/*
+research/catboost_info/*
+research/data/*
+research/saved_models/*
