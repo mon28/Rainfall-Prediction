@@ -23,8 +23,8 @@ conda activate rainfall
 pip install -r requirements.txt
 ```
 
-#### STEP 03: Run the Streamlit app
+#### STEP 03: Run the Flask app
 
 ```bash
-python main.py
+python app.py
 ```
