@@ -20,6 +20,7 @@ list_of_files = [
     f"src/{project_name}/constants/__init__.py",
     f"src/{project_name}/app_exception/__init__.py",
     f"src/{project_name}/app_exception/exception_handler.py",
+    f"src/{project_name}/research/RainfallPrediction.ipynb",
     "config/config.yaml",
     "params.yaml",
     "app.py",
